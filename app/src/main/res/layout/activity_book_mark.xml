@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <data>
+
+  </data>
+  <androidx.constraintlayout.widget.ConstraintLayout
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/white"
+      tools:context=".home.activities.SettingsActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical">
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/backImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            android:src="@drawable/arrow_back_icon" />
+
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/hind_medium"
+            android:textSize="16dp"
+            android:textColor="@color/black_text"
+            android:text="BookMark"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/backImg"
+            />
+        <TextView
+            android:id="@+id/clearALL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp12"
+            android:visibility="gone"
+            android:layout_marginEnd="12dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_shape_skip"
+            android:text="Clear All"
+            android:textSize="12sp"
+            />
+      </RelativeLayout>
+      <View
+          android:layout_width="match_parent"
+          android:background="#E7E7E7"
+          android:layout_height="1dp"/>
+
+      <RelativeLayout
+          android:id="@+id/emptyLL"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/bookmark_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:src="@drawable/bookmart_empty_image"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="70dp"></ImageView>
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:text="No Saved Stories yet"
+          android:textSize="18sp"
+          android:textColor="#000"
+          android:fontFamily="@font/hind_semibold"
+          android:layout_below="@+id/bookmark_empty"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="10dp"></TextView>
+        <TextView
+            android:id="@+id/text2"
+          android:layout_below="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:text="You can save stories to read later by tapping on
+the bookmark  icon on the top of right"
+            android:gravity="center"
+            android:textColor="#4B4B4B"
+          android:layout_centerHorizontal="true"></TextView>
+
+        <TextView
+            android:id="@+id/deleteAllsw"
+            android:layout_below="@+id/text2"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/dp12"
+            android:gravity="center"
+            android:layout_marginEnd="12dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="70dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/hind_regular"
+            android:background="@drawable/bg_shape_explore_news"
+            android:text="Explore News"
+            android:textSize="14sp"
+            />
+
+      </RelativeLayout>
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/bookmarkRecyclerview"
+          android:layout_width="match_parent"
+          android:visibility="gone"
+          tools:listitem="@layout/item_bookmark"
+          android:layout_height="match_parent">
+      </androidx.recyclerview.widget.RecyclerView>
+
+
+    </LinearLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
